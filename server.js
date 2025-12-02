@@ -2,6 +2,7 @@
 import express from 'express';
 import runComparisonWithlocation  from './scrapers/withlocation/index.js';
 import runComparisonWithoutLocation from './scrapers/withoutlocation/index.js';
+import testdata from './scrapers/testdata.js';
 
 // server.js - simple Express server with a GET route
 
@@ -33,7 +34,7 @@ app.get('/api/compare/withlocation', async (req, res) => {
 
 });
 
-app.get('api/testdata', (req, res) => {
+app.get('/api/testdata', (req, res) => {
     return res.json(testdata);
 });
 
