@@ -33,6 +33,17 @@ app.get('/api/compare/withlocation', async (req, res) => {
 
 });
 
+app.get('api/testdata', (req, res) => {
+    return res.json(testdata);
+});
+
+app.get('/', (req, res) => {
+    res.send('QuickFind Support Server is running.');
+}
+);
+
+
+
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
 });
