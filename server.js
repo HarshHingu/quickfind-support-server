@@ -35,6 +35,7 @@ app.get('/api/compare/withlocation', async (req, res) => {
 });
 
 app.get('/api/testdata', (req, res) => {
+    console.log("Checking it: ",testdata)
     return res.json(testdata);
 });
 
