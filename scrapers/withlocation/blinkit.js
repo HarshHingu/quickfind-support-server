@@ -71,7 +71,7 @@ async function setBlinkitLocation(page, loc) {
 // ---------------------------------------------
 async function scrapeBlinkit(product, location) {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -171,11 +171,11 @@ async function scrapeBlinkit(product, location) {
       }
 
       return {
-        id: card.id,
         name: name ? name.innerText.trim() : null,
         weight: weight ? weight.innerText.trim() : null,
         price,
         image: img ? img.src : null,
+        href: `https://blinkit.com/prn/product/prid/${card.id}`,
       };
     });
   });

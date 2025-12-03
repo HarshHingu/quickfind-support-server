@@ -75,7 +75,7 @@ async function setZeptoLocation(page, loc) {
 
 async function scrapeZepto(product, location) {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
